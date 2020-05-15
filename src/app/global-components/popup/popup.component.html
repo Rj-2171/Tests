@@ -1,0 +1,8 @@
+<div id="popup1" class="overlay" *ngIf="status">
+  <div class="popup" [ngStyle]="{'background-color': color}">
+    <div class="close" (click)="closePopup()">&times;</div>
+    <div class="content">
+      {{message}}
+    </div>
+  </div>
+</div>

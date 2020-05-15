@@ -1,0 +1,47 @@
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab label="Video Gallery">
+        <div class="flex-center col-sm-12">
+            <div class="col-sm-2">
+                <select [(ngModel)]="selectedSubject" (ngModelChange)="onSubjectChange($event)">
+                    <option [ngValue]="undefined" hidden disabled selected>Subject</option>
+                    <option *ngFor="let subject of allSubjects" [ngValue]="subject">{{subject.subjectName}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <select [(ngModel)]="selectedClass" (ngModelChange)="onClassChange($event)">
+                    <option [ngValue]="undefined" hidden disabled selected>Class</option>
+                    <option *ngFor="let class of allClasses" [ngValue]="class">{{class.className}}</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <select [(ngModel)]="selectedInstitute" (ngModelChange)="onInstituteChange($event)">
+                    <option [ngValue]="undefined" hidden disabled selected>Institute</option>
+                    <option *ngFor="let institute of allInstitutes" [ngValue]="institute">
+                        {{institute.instituteName}}</option>
+                </select>
+            </div>
+            <div class="m-3">
+                <button class="btn-icon" (click)="getVideo()">Search</button>
+            </div>
+        </div>
+
+        <div class="video-list-container">
+            <div *ngFor="let video of videoList" class='card'>
+                <div class="subject-name-chip">
+                    {{video.subjectId.subjectName}}
+                </div>
+                <div class='card-img-top'>
+                    <video class='img-fluid' controls>
+                        <source src="{{video.videoLink}}" type="video/mp4">
+                    </video>
+                </div>
+                <div class='card-block'>
+                    <h4 class='card-title ellipsis'>{{ video.videoTitle | uppercase }}</h4>
+                    <p class='card-text ellipsis'>{{ video.videoDesc}}</p>
+
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>

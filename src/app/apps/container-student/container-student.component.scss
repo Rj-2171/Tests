@@ -1,0 +1,116 @@
+.section {
+  width: 80%;
+  float: right;
+  padding: 1em;
+  height: 100%;
+}
+
+.aside {
+  width: 20%;
+  float: left;
+  // padding: 1em;
+  height: 100%;
+}
+
+.navbar-list-container {
+  width: 18em;
+
+
+}
+
+.left-container {
+  padding: 2em;
+
+  position: fixed;
+  height: 100vh;
+  overflow: auto;
+  width: 18vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.profile-icon {
+  height: 2em;
+  width: 2em;
+}
+
+.left-top-container {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 1em;
+}
+
+.all-wrap {
+  min-height: 100vh; // same height as browser window height
+}
+
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // same height as browser window height
+}
+
+.content {
+  flex: 1; // child will set to an equal size inside the container
+  background-color:#F8FAFA;
+  height: 100% !important;
+}
+
+.custom-heading {
+  padding-bottom: 0.3em;
+  padding-left: 0.5em;
+}
+
+/*
+   * Make the component injected by <router-outlet> full height:
+   */
+
+main {
+
+  display: flex;
+  flex-direction: column;
+
+  // Select all direct descendants only of the <main> element
+  // that are not <router-outlet> elements:
+  >*:not(router-outlet) {
+
+    flex: 1; // child will set to an equal size inside the container
+    display: block;
+
+  }
+
+
+
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.nav-links-header {
+  font-size: 0.8em;
+  padding: 0.5em;
+}
+
+.mat-toolbar{
+  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+  height: 40px !important;
+ 
+ 
+}
+.mat-drawer{
+background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+
+}
+.mat-toolbar-multiple-rows {
+  min-height: 49px !important;
+}
+.mat-app-background{
+  color: #F8FAFA !important;
+}

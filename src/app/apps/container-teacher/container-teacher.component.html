@@ -1,0 +1,82 @@
+<mat-sidenav-container class="all-wrap">
+
+    <mat-sidenav #sidenav over>
+        <mat-list class="navbar-list-container">
+            <mat-list-item>
+                <!-- <mat-icon>supervisor_account</mat-icon>&emsp;{{user.name}} -->
+                Hi, {{user.name}}
+            </mat-list-item>
+            <mat-divider></mat-divider>
+
+            <mat-list-item class="cursor-pointer" *ngFor="let route of routes" [routerLink]="route.path"
+                (click)="sidenav.toggle()">
+                <mat-icon>{{ route.icon }}</mat-icon>&emsp;{{route.name}}
+            </mat-list-item>
+            <mat-divider></mat-divider>
+
+            <mat-list-item class="cursor-pointer" (click)="logOut()">
+                <mat-icon>exit_to_app</mat-icon>&emsp;Log Out
+            </mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+
+
+
+    <mat-sidenav-content class="page-wrap img-bg">
+
+        <mat-toolbar>
+            <mat-toolbar-row>
+                <span>
+                    <mat-icon class="cursor-pointer" (click)="sidenav.open()">menu
+                    </mat-icon>
+                </span>
+                <span>
+                    <h1 class="custom-heading">Prep-Ease</h1>
+                </span>
+                <span class="example-spacer"></span>
+                <!-- <span class="cursor-pointer" *ngFor="let route of routes" class="nav-links-header"
+                    [routerLink]="route.path">
+                    {{ route.name }}
+                </span>
+                <span class="nav-links-header cursor-pointer" (click)="logOut()">Log Out</span> -->
+            </mat-toolbar-row>
+        </mat-toolbar>
+
+        <main class="content">
+            <router-outlet></router-outlet>
+        </main>
+
+        <!-- <footer>
+      <h2>Sticky Footer !!</h2>
+      <p>... with variable height</p>
+    </footer> -->
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
+
+
+<!-- <aside class="aside">
+    <div class="dashboard-menu-container">
+        <div style="background-color: #F1F1F1;" class="left-container">
+            <div>
+                <div class="nav-heading">
+                    Prep-Ease
+                </div>
+                <div style="display: flex;" class="left-top-container">
+                    <span><img class="profile-icon" src="../../../../assets/images/profile-icon.png" alt="" /></span>
+                    <span class="my-profile">My Profile </span>
+                </div>
+            </div>
+            <ul>
+
+                <li *ngFor="let item of routes" [routerLink]="item.path">{{ item.name }}</li>
+                <li (click)="logOut()">LogOut</li>
+            </ul>
+        </div>
+    </div>
+</aside> -->
+<!-- <section class="section">
+    <router-outlet></router-outlet>
+</section> -->

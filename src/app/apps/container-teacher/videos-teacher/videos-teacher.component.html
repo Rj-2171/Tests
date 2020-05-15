@@ -1,0 +1,79 @@
+<!-- <app-popup [message]="message" [status]="status" (close)="closePopup($event)" [type]="statusType"></app-popup> -->
+<div *ngIf="!showVideoDetail">
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="My Videos">
+            <div class="video-list-container">
+                <div class='add-card' title="Add new video" (click)="showVideoDetails()">
+                    <div class="add-icon">+</div>
+                </div>
+                <div *ngFor="let video of videoList" class='card'>
+                    <div class="subject-name-chip">
+                        {{video.subjectId.subjectName}}
+                    </div>
+                    <div class='card-img-top'>
+                        <video class='img-fluid' controls>
+                            <source src="{{video.videoLink}}" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class='card-block'>
+                        <h4 class='card-title ellipsis'>{{ video.videoTitle | uppercase }}</h4>
+                        <p class='card-text ellipsis'>{{ video.videoDesc}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Public Videos">
+
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
+
+
+<!-- Form to upload video -->
+
+<ng-container *ngIf="showVideoDetail">
+    <div class="video-detail row">
+        <div class="col-sm-12 video-detail-form nav-heading title">Video details</div>
+        <div class="col-sm-12 video-detail-form">
+            <input type="text" placeholder="Title" [(ngModel)]="title">
+        </div>
+        <div class="col-sm-12 video-detail-form">
+            <select [(ngModel)]="selectedSubject" (ngModelChange)="onSubjectChange($event)">
+                <!-- <option value="">Subject</option> -->
+                <option [ngValue]="undefined" hidden disabled selected>Subject</option>
+                <option *ngFor="let subject of allSubjects" [ngValue]="subject">{{subject.subjectName}}
+                </option>
+            </select>
+        </div>
+        <div class="col-sm-12 video-detail-form">
+            <select [(ngModel)]="selectedClass" (ngModelChange)="onClassChange($event)">
+                <option [ngValue]="undefined" hidden disabled selected>Year</option>
+                <option *ngFor="let class of allClasses" [ngValue]="class">{{class.className}}</option>
+            </select>
+        </div>
+        <div class="col-sm-12 video-detail-form">
+            <select [(ngModel)]="selectedInstitute" (ngModelChange)="onInstituteChange($event)">
+                <option [ngValue]="undefined" hidden disabled selected>Branch</option>
+                <option *ngFor="let institute of allInstitutes" [ngValue]="institute">
+                    {{institute.instituteName}}</option>
+            </select>
+        </div>
+        <div class="col-sm-12 video-detail-form">
+            <textarea placeholder="Enter the description of the video." rows="4" cols="50"
+                [(ngModel)]="videoDesc"></textarea>
+        </div>
+        <div class="row video-detail-form col-sm-12">
+            <div class="video-choose"><input type="file" placeholder="Upload Video..." (change)="onFileSelect($event)">
+            </div>
+            <div class="upload-btn"><i class="fa fa-upload" aria-hidden="true" data-toggle="Upload video"
+                    title="Upload video" (click)="uploadVideo()"></i></div>
+        </div>
+        <div>
+            <button class="btn-next mb-0" type="button" (click)="addVideo()">Add</button>
+            <div class="back-link" (click)="onBackClick()">Back</div>
+        </div>
+    </div>
+</ng-container>

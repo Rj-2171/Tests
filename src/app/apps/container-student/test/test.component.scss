@@ -1,0 +1,279 @@
+.old-css {
+  p {
+    font-family: Lato;
+  }
+
+  .main-container {
+    display: flex;
+  }
+
+  .left-panel {
+    background-color: #F1F1F1;
+    width: 25vw;
+    height: 100vh;
+    position: fixed;
+  }
+
+  .right-panel {
+    width: 75vw;
+    height: 100vh;
+    margin-left: 25vw;
+  }
+
+  .question-button {
+    margin: 1em;
+    height: 3.5em;
+    width: 3.5em;
+    margin-left: 3.2em;
+    background-color: lightgray;
+  }
+
+  .submit-test {
+    margin-left: 9.5em;
+    height: 2em;
+    width: 5em;
+  }
+
+  .test-details {
+    margin: 0.5em;
+    align-items: center;
+  }
+
+  .class {
+    float: right;
+  }
+
+  .test-heading {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .question-card {
+    font-size: 1.2em;
+    /* min-width: 69vw; */
+    min-height: 32vh;
+    /* height: 9vh; */
+    width: 69vw;
+    margin: 1.3em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.7s;
+    background-color: #F1F1F1;
+    padding: 0.5em;
+  }
+
+  .radio {
+    margin: 1em;
+  }
+
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.inactive-bg{
+  pointer-events: none;
+    cursor: none;
+}
+
+
+.test-conduct-container {
+  height: 100% !important;
+  width: 100% !important;
+  background-color: #F8FAFA !important;
+  .modal-popup {
+    position: absolute;
+    z-index: 1;
+    border-radius: 1em;
+    left: 30em;
+    top: 10em;
+
+    .modal-content {
+      color: white;
+      background-color: #218838;
+      border-radius: 10px;
+      pointer-events: auto;
+      cursor: default;
+    }
+
+    .result-content {
+      padding: 3rem !important;
+      background-color: white;
+      color: black;
+    }
+
+    .btn-placement {
+      margin-top: 2em;
+      margin-left: 8em;
+    }
+  }
+  mat-chip{
+    cursor: pointer;
+  }
+
+  .text-wrap{
+    overflow-wrap: break-word;
+  }
+
+  .element {
+    margin: 0.5em;
+    // cursor: pointer;
+  }
+
+  .element-img {
+    margin-top: 0.9em;
+  }
+
+  .test-name {
+    text-transform: uppercase;
+  }
+
+  .time-left {
+    font-size: 0.8em;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .main-test-content-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    width: 100%;
+    display: grid;
+    grid-auto-rows: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1em;
+  }
+
+  .main-test-content-container .question-container {
+    display: flex;
+    flex-direction: column;
+    // margin: 0.5em;
+    background-color:#E7F8FF;
+  }
+
+
+  .footer-container {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    background-color:#E7F8FF;
+    perfect-scrollbar {
+      height: 49vh !important;
+      
+    }
+
+    .selected-option {
+      background-color: green;
+    }
+  }
+
+  .question-list-container{
+    background-color:#E7F8FF;
+
+  }
+
+  .column {
+    display: inline-block;
+    height: 100%;
+    width: 25%;
+  }
+
+  .question-button-list {
+    height: 53vh;
+
+    .question-change-button {
+      margin: 1em;
+      padding: 1em;
+      bottom: 0;
+
+      .single-btn {
+        // margin-right: 1em;
+        margin: 0.2em;
+        width: 45%;
+      }
+    }
+
+    .submit-test-btn {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding-right: 2em;
+      padding-bottom: 1em;
+
+      .submit-btn {
+        width: 100%;
+
+      }
+    }
+
+  }
+}
+.mat-toolbar{
+  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+  height: 50px !important;
+
+ 
+}
+.mat-app-background {
+  background-color: #F8FAFA !important;
+}
+.question-button-list{
+.ps{
+  height: 30vh !important;
+}
+}
+.ps{
+  height: 30vh !important;
+}
+
+.student-start-btn-2{
+  height: 26%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-2 {
+  width: 122px !important;
+  height: 32px;
+  margin: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #2EE59D;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.button-2:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+.mat-card{
+background: none ;
+box-shadow: none !important;
+color: black !important;
+border: 2px solid #83C8F3 !important;
+}

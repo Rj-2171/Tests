@@ -1,0 +1,193 @@
+@media only screen and (max-width: 1440px){
+    .text-white{ 
+        text-align: center;
+     }
+}
+
+
+@media only screen and (max-width: 1200px){
+    .text-white{ 
+        font-size: 1.5em;
+        text-align: center;
+     }
+    .content{ font-size: 14px; }
+    .btn-secondary{ width: 9em; }
+    .text-green { font-size: 30px; }
+    
+    }
+
+@media only screen and (max-width: 949px){
+    .text-white{ font-size: 20px; }
+    .content{ font-size: 12px; }
+    .back-link{ font-size: 10px; }
+    .btn-secondary{ 
+        width: 7em;
+        height: 2.5em;
+        font-size: medium;    
+    }
+    input{ 
+        height: 2.5em; 
+        font-size: 14px;
+    }
+    .signup-button{ 
+        width: 7em;
+        height: 2.5em;
+    }
+    select{ height: 2.5em;
+    font-size: 11px;
+    }
+    .btn-next{
+        width: 7em;
+        height: 2.5em;
+        font-size: medium;
+        margin-left: 11%;
+    }
+}
+
+@media only screen and (max-width: 680px){
+    .text-white{ font-size: 16px; }
+    .content{ font-size: 10px; }
+    .btn-secondary{ font-size: x-small; }
+    .back-link{ 
+        font-size: 8px; 
+        margin-left: 0%
+    }
+    .text-green { font-size: 16px; }
+    .signin-form-container {
+        width: 70%;
+
+    }
+    input{ 
+        font-size: 12px; 
+        
+    }
+    .signup-button{ 
+        font-size: x-small;
+        margin-top: 27%;
+    }
+    .btn-next {
+        font-size: x-small;
+        margin-left: 11%;
+        margin-top: 27%;
+    }
+    .form-container{
+        padding-right: 0%;
+    }
+}
+
+@media only screen and (max-width: 414px){
+    .text-green{
+        font-size: 24px;
+        margin-top: 8%;
+    }
+    .content{
+        margin-bottom: 223px;
+        margin-left: 557%;
+        color: lightslategrey;
+        width: 431%;
+        font-size: smaller;
+       
+    }
+    .text-white{
+        font-size: 24px;
+        margin-left: 556%;
+        color: #2E8B57 !important;
+        width: 273%;
+        margin-top: -136%;
+
+    }
+    .content-section{
+        width : 100%;
+    }
+    .create-account-secondary{
+        background-color: #2E8B57 !important;
+        margin-left: 546%;
+        font-size: x-small;
+        margin-top: 36%;
+        width: 381%;
+        z-index: 1;
+        border-color: #2E8B57;
+    }
+
+    .box{
+        width: 96vw;
+        margin-left: 2vw;
+        height: 98vh;
+        margin-top: 1vh;
+    }
+    .back-link{
+        width: 101px;
+        font-size: 13px;
+        position: fixed;
+        margin-top: 78%;
+        margin-left: 45% !important;
+    }
+    .signup-button{
+        width: 83%;
+        margin-top: 9%;
+        font-size: x-small;
+        margin-left: 0px;
+    }
+    .signin-form-container {
+        width: 82%;
+    }
+    
+    input{ 
+        font-size: 11px;
+        height: 2em; }
+    .nav-section{ width: 18%;}
+    .signup-container{
+        margin-top: -74%;
+    }
+    .create-account-primary{
+        width: 83%;
+        margin-top: 9%;
+        font-size: x-small;
+        margin-left: 0px;
+    }
+    .create-account-green{
+        font-size: 24px;
+        margin-top: 37%;
+    }
+    .final-signup-button{
+        width: 83%;
+        margin-top: 27%;
+        font-size: x-small;
+        margin-left: 0px;
+    }
+    .welcome-back{
+        font-size: 11px;
+        margin-left: -4%;
+        color: white !important;
+        width: 82%;
+        margin-top: 0%;
+    }
+    .welcome-content{
+        margin-bottom: 371%;
+        margin-left: 0%;
+        color: white;
+        width: 138%;
+        font-size: 8px;
+    }
+    .final-signin{
+        font-size: 7.5px;
+        margin-top: -343%;
+    }
+    .final-back-link{
+        width: 20%;
+        font-size: 7px;
+        position: fixed;
+        margin-top: 26%;
+        margin-left: 0% !important;
+    }
+    .create-account-teacher{
+        font-size: 24px;
+        margin-top: 37%;
+    }
+    .teacher-signup-button{
+        width: 83%;
+        margin-top: 27%;
+        font-size: x-small;
+        margin-left: 0px;
+    }
+}

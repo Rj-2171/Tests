@@ -1,0 +1,345 @@
+<div>
+    <!-- <app-popup [message]="message" [status]="status" (close)="closePopup($event)" [type]="statusType"></app-popup> -->
+    <!-- CREATE A NEW TEST -->
+    <div class="add-new-test" *ngIf="addNewTest">
+
+        <div class="question-list">
+
+            <!-- Question List -->
+            <!-- <ng-container *ngIf="navigate === 'createTest'">
+                <div [ngClass]="{'bg-blur':showSubjectDetails || showQuestionForm}"
+                    [ngStyle]="{'display': showSubjectDetails ? 'none' : ''}">
+                    <header class="add-question">
+                        <button type="submit" class="btn-icon" tooltip="Add question"
+                            (click)="onAddQuestion()">+</button>
+                        <span class="title white">Question Paper</span>
+                    </header>
+                    <section>
+                        <perfect-scrollbar>
+                           
+                            <div class="test-cards-container" *ngIf="questionList.length !== 0">
+                                <div class="test-cards" *ngFor="let question of questionList; let i = index">
+                                    <div class="test-heading">
+                                       
+                                        <span class="heading-content">{{i+1}}. {{question.question}}</span>
+                                    </div>
+
+                                    <div class="col-sm-12 flex-center">
+                                        <div class="col-sm-8">
+                                            <div class="col-sm-12 flex-center">
+                                                <div class="col-sm-6 option-field"
+                                                    [ngStyle]="{'border': question.answer === 'option1' ? '3px solid green' : ''}">
+                                                    <div>
+                                                        a. {{question.option1}}
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 option-field"
+                                                    [ngStyle]="{'border': question.answer === 'option2' ? '3px solid green' : ''}">
+                                                    <div>
+                                                        b. {{question.option2}}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12 flex-center">
+                                                <div class="col-sm-6 option-field"
+                                                    [ngStyle]="{'border': question.answer === 'option3' ? '3px solid green' : ''}">
+                                                    <div>
+                                                        c. {{question.option3}}
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 option-field"
+                                                    [ngStyle]="{'border': question.answer === 'option4' ? '3px solid green' : ''}">
+                                                    <div>
+                                                        d. {{question.option4}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3 flex-center">
+                                            <img *ngIf="question.image" class="img-size" src="{{question.image}}">
+                                        </div>
+
+                                        <div class="col-sm-1">
+                                            <button class="btn-action" type="button" (click)="editQuestion(i)">Edit</button>
+                                            <button class="btn-action" type="button" (click)="deleteQuestion(i)">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </perfect-scrollbar>
+                    </section>
+
+                    <div class="submit-button-align">
+                        <button class="btn-primary" (click)="onPaperSubmission()">Submit Paper</button>
+                    </div>
+
+                </div> -->
+            <ng-container *ngIf="showSubjectDetails">
+                <div class="test-detail row">
+                    <div class="col-sm-12 test-detail-form nav-heading title mb-3">Test paper Details</div>
+                    <!-- 1st part -->
+                    <div class="col-sm-4">
+                        <div class="col-sm-12 test-detail-form">
+                            <input type="text" placeholder="Title" [(ngModel)]="title">
+                        </div>
+                        <div class="row mx-0 test-detail-form">
+                            <div class="col-sm-6 pr-2">
+                                <input type="text" placeholder="Start Date" [(ngModel)]="startDate"
+                                    onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                            </div>
+                            <div class="col-sm-6 pl-2">
+                                <input type="text" placeholder="End Date" [(ngModel)]="endDate"
+                                    onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                            </div>
+                        </div>
+                        <div class="row mx-0 test-detail-form">
+                            <div class="col-sm-6 pr-2">
+                                <input type="text" placeholder="Start Time" [(ngModel)]="startTime"
+                                    onfocus="(this.type='time')" onblur="(this.type='text')" required>
+                            </div>
+                            <div class="col-sm-6 pl-2">
+                                <input type="number" placeholder="Test Duration(in minutes)" [(ngModel)]="duration"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 test-detail-form">
+                            <select [(ngModel)]="selectedClass" (ngModelChange)="onClassChange($event)">
+                                <option [ngValue]="undefined" hidden disabled selected>Year</option>
+                                <option *ngFor="let class of allClasses" [ngValue]="class">{{class.className}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-12 test-detail-form">
+                            <select [(ngModel)]="selectedInstitute" (ngModelChange)="onInstituteChange($event)">
+                                <option [ngValue]="undefined" hidden disabled selected>Branch</option>
+                                <option *ngFor="let institute of allInstitutes" [ngValue]="institute">
+                                    {{institute.instituteName}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-12 test-detail-form mb-3">
+                            <textarea placeholder="Enter the description of the test." rows="5" cols="50"
+                                [(ngModel)]="questionDesc"></textarea>
+                        </div>
+
+                    </div>
+                    <!-- 2nd part -->
+                    <div class="col-sm-4 border-left-section">
+                        <div class="col-sm-12 test-detail-form">
+                            <select [(ngModel)]="selectedSubject" (ngModelChange)="onSubjectChange($event)">
+                                <option [ngValue]="undefined" hidden disabled selected>Subject</option>
+                                <option *ngFor="let subject of allSubjects" [ngValue]="subject">{{subject.subjectName}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-sm-12 test-detail-form">
+                            <input type="number" placeholder="Total Marks" [(ngModel)]="totalMarks">
+                        </div>
+                        <div *ngIf="subjectWiseQuestion.length !== 0" class="col-sm-12 mt-3 unit-wise">Unit wise
+                            question number</div>
+
+                        <div class="unit-wise-input">
+
+                            <div *ngFor="let unit of subjectUnit; let i = index" class="col-sm-6 pr-2 test-detail-form">
+                                <div class="mt-3">Unit {{unit.unitName}}</div>
+                                <input class="mt-0" type="number" placeholder="No. of questions"
+                                    [(ngModel)]="subjectWiseQuestion[i].noOfQuestion" required>
+                            </div>
+
+                            <!-- <div class="col-sm-6 pr-2 test-detail-form">
+                                <div class="mt-3">Unit {{unit.unitName}}</div>
+                                <input class="mt-0" type="number" placeholder="No. of questions" required>
+                            </div> -->
+
+                        </div>
+
+                    </div>
+                    <!-- 3rd part -->
+                    <div class="col-sm-4">
+                        <div class="col-sm-12 test-detail-form">
+                            <input type="file" placeholder="Upload Question Paper..."
+                                (change)="onObjectiveCSVSelect($event)">
+                        </div>
+                        
+
+                        
+                        <div class="col-sm-12 test-detail-form uploadprogress">
+                        <!-- <div *ngIf="clickupload"
+                            class="flex flex-align-center progress-bar progress-bar-striped upload-progress-bar progress-bar-animated"
+                            role="progressbar" [ngStyle]="getPBarWidth()">
+                        </div> -->
+                        <div  *ngIf="clickupload" class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"  [ngStyle]="getPBarWidth()"></div>
+                          </div>
+                    </div>
+
+
+                        <div class="col-sm-12 test-detail-form flex-center">
+                            <div class="upload-btn btn-next" data-toggle="Upload Question Paper"
+                                (click)="uploadObjectivePaper()" title="Upload Question Paper">
+                                <i class="fa fa-upload" aria-hidden="true"></i>
+                                <span>UPLOAD</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-12 test-detail-form row flex-center">
+                        <button class="btn-next mb-0" type="button"
+                            (click)="onObjectivePaperSubmission()">Submit</button>
+
+                    </div>
+                    <div class="col-sm-12 test-detail-form row flex-center">
+                        <div class="back-link" (click)="backToTest('closeQuestionDetail')">Back</div>
+
+                    </div>
+
+                </div>
+            </ng-container>
+
+
+            <!-- Question form-->
+            <!-- <ng-container *ngIf="showQuestionForm">
+                    <div class="question-detail row">
+                        <div class="col-xs-12 test-detail-form title">Add Question</div>
+                        <div class="col-xs-12 test-detail-form">
+                            <input type="text" placeholder="Question" [(ngModel)]="question">
+                        </div>
+                        <div class="col-xs-12 test-detail-form">
+                            <input type="text" placeholder="Option 1" [(ngModel)]="option1">
+                        </div>
+                        <div class="col-xs-12 test-detail-form">
+                            <input type="text" placeholder="Option 2" [(ngModel)]="option2">
+                        </div>
+                        <div class="col-xs-12 test-detail-form">
+                            <input type="text" placeholder="Option 3" [(ngModel)]="option3">
+                        </div>
+                        <div class="col-xs-12 test-detail-form">
+                            <input type="text" placeholder="Option 4" [(ngModel)]="option4">
+                        </div>
+                        <div class="col-xs-12 test-detail-form">
+                            <select [(ngModel)]="answer" (change)="onAnswerChange($event)">
+                                <option value="" hidden disabled selected>Answer</option>
+                                <option value="option1">Option 1</option>
+                                <option value="option2">Option 2</option>
+                                <option value="option3">Option 3</option>
+                                <option value="option4">Option 4</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-12 test-detail-form row">
+                            <div class="file-choose"><input type="file" placeholder="Upload Question Image..."
+                                    (change)="onFileSelect($event)"></div>
+                            <div class="upload-btn"><i class="fa fa-upload" aria-hidden="true"
+                                    data-toggle="Upload image" title="Upload image" (click)="uploadImage()"></i></div>
+                        </div>
+                        <div> -->
+            <!-- // Not used line // [ngClass]="{'disable': (question === '' || option1 === '' || option2 === '' || option3 === '' || option4 === ''|| answer === '')}" -->
+            <!-- <button *ngIf="!isEdited" class="btn-next mb-0" type="button" (click)="onAddQuestionDetail()">Add</button>
+                            <button *ngIf="isEdited" class="btn-next mb-0" type="button" (click)="onUpdate()">Update</button>
+                            <div class="back-link" (click)="backToTest('closeAddQuestion')">Back</div>
+                        </div>
+                    </div>
+                </ng-container> -->
+
+            <!-- </ng-container> -->
+        </div>
+    </div>
+
+    <!-- SUBJECTIVE TEST WORK!!! -->
+
+    <ng-container *ngIf="showSubjectiveDetails">
+        <div class="subjective-test-detail row">
+            <div class="col-sm-12 test-detail-form nav-heading title">Test paper details</div>
+            <div class="col-sm-12 test-detail-form">
+                <input type="text" placeholder="Title" [(ngModel)]="titleSb">
+            </div>
+            <div class="row test-detail-form">
+                <div class="col-sm-6 pr-2">
+                    <input type="text" placeholder="Start Date" [(ngModel)]="startDateSb" onfocus="(this.type='date')"
+                        onblur="(this.type='text')" required>
+                </div>
+                <div class="col-sm-6 pl-2">
+                    <input type="text" placeholder="End Date" [(ngModel)]="endDateSb" onfocus="(this.type='date')"
+                        onblur="(this.type='text')" required>
+                </div>
+            </div>
+            <div class="row test-detail-form">
+                <div class="col-sm-6 pr-2">
+                    <input type="text" placeholder="Start Time" [(ngModel)]="startTimeSb" onfocus="(this.type='time')"
+                        onblur="(this.type='text')" required>
+                </div>
+                <div class="col-sm-6 pl-2">
+                    <input type="number" placeholder="Test Duration(in minutes)" [(ngModel)]="durationSb" required>
+                </div>
+            </div>
+            <div class="row test-detail-form">
+                <div class="col-sm-6 pr-2">
+                    <select [(ngModel)]="selectedClassSb" (ngModelChange)="onClassChangeSb($event)">
+                        <option [ngValue]="undefined" hidden disabled selected>Year</option>
+                        <option *ngFor="let class of allClasses" [ngValue]="class">{{class.className}}</option>
+                    </select>
+                </div>
+                <div class="col-sm-6 pl-2">
+                    <input type="number" placeholder="Total Marks" [(ngModel)]="totalMarksSb" required>
+                </div>
+            </div>
+            <div class="col-sm-12 test-detail-form">
+                <select [(ngModel)]="selectedSubjectSb" (ngModelChange)="onSubjectChangeSb($event)">
+                    <!-- <option value="">Subject</option> -->
+                    <option [ngValue]="undefined" hidden disabled selected>Subject</option>
+                    <option *ngFor="let subject of allSubjects" [ngValue]="subject">{{subject.subjectName}}
+                    </option>
+                </select>
+            </div>
+            <!-- <div class="col-sm-12 test-detail-form">
+                <select [(ngModel)]="selectedClassSb" (ngModelChange)="onClassChangeSb($event)">
+                    <option [ngValue]="undefined" hidden disabled selected>Year</option>
+                    <option *ngFor="let class of allClasses" [ngValue]="class">{{class.className}}</option>
+                </select>
+            </div> -->
+            <div class="col-sm-12 test-detail-form">
+                <select [(ngModel)]="selectedInstituteSb" (ngModelChange)="onInstituteChangeSb($event)">
+                    <option [ngValue]="undefined" hidden disabled selected>Branch</option>
+                    <option *ngFor="let institute of allInstitutes" [ngValue]="institute">
+                        {{institute.instituteName}}</option>
+                </select>
+            </div>
+            <div class="col-sm-12 test-detail-form">
+                <textarea placeholder="Enter the description of the test." rows="4" cols="50"
+                    [(ngModel)]="questionDescSb"></textarea>
+            </div>
+            <div class="col-sm-12 test-detail-form row">
+                <div class="file-choose"><input type="file" placeholder="Upload Question Paper..." 
+                        (change)="onSubjectivePaperSelect($event)"></div>
+                <div class="upload-btn"><i class="fa fa-upload" aria-hidden="true" data-toggle="Upload Question Paper"
+                        title="Upload Question Paper" (click)="uploadSubjectivePaper()"></i></div>
+            </div>
+            <div>
+                <button class="btn-next mb-0" type="button" (click)="onSubmitSubjectiveTestPaper()">Next</button>
+                <div class="back-link" (click)="backToSubjectiveTest()">Back</div>
+            </div>
+        </div>
+    </ng-container>
+
+    <!----------------------------->
+
+    <!-- SHOW TEST LISTS -->
+    <div *ngIf="!(addNewTest || showSubjectiveDetails)">
+        <mat-tab-group mat-align-tabs="center">
+            <mat-tab label="My Objective Tests">
+                <app-test-list-global (createTest)="createNewTest()" [show-create-test]="true" [is-student]="false"
+                    [test-list]="testListGlobal">
+                </app-test-list-global>
+            </mat-tab>
+            <mat-tab label="My Subjective Tests">
+                <app-test-list-global (createTest)="createNewSubjectiveTest()" [show-create-test]="true"
+                    [is-student]="false" [test-list]="testListSubjectiveGlobal">
+                </app-test-list-global>
+            </mat-tab>
+            <!-- <mat-tab label="Public Tests">
+                <app-test-list-global [is-student]="false" [show-create-test]="false" [test-list]="testListPub">
+                </app-test-list-global>
+            </mat-tab> -->
+        </mat-tab-group>
+    </div>
+</div>

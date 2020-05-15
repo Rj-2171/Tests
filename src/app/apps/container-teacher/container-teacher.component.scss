@@ -1,0 +1,79 @@
+.all-wrap {
+  min-height: 100vh; // same height as browser window height
+  background: white;
+}
+
+.navbar-list-container {
+  width: 18em;
+}
+
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // same height as browser window height
+}
+
+.content {
+  flex: 1; // child will set to an equal size inside the container
+}
+
+.custom-heading {
+  padding-bottom: 0.3em;
+  padding-left: 0.5em;
+}
+
+/*
+   * Make the component injected by <router-outlet> full height:
+   */
+
+main {
+
+  display: flex;
+  flex-direction: column;
+
+  // Select all direct descendants only of the <main> element
+  // that are not <router-outlet> elements:
+  >*:not(router-outlet) {
+
+    flex: 1; // child will set to an equal size inside the container
+    display: block;
+
+  }
+
+
+
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.nav-links-header {
+  font-size: 0.8em;
+  padding: 0.5em;
+}
+
+.mat-toolbar{
+  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+  height: 40px !important;
+ 
+ 
+}
+.mat-drawer{
+  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+  
+  }
+  .mat-toolbar-multiple-rows {
+    min-height: 49px !important;
+  }
+
+
+  .mat-tab-labels, .mat-tab-label, .mat-tab-link {
+    color: black;
+    font-size: 16px;
+    background-color: #F8FAFA;
+  }

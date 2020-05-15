@@ -1,0 +1,106 @@
+<div class="test-conduct-container" [ngClass]="{'inactive-bg': showResultBoolean}">
+    <mat-toolbar>
+        <span class="test-name">{{ testTitle }}</span>
+        <span class="spacer"></span>
+        <span class="time-left">
+            TIME LEFT :
+            <countdown #countdown [config]="{leftTime: duration}" (event)="timeOver($event)">$!m!:$!s!</countdown>
+        </span>
+    </mat-toolbar>
+    <ng-container *ngIf="showResultBoolean">
+        <div class="modal-popup">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Result</h4>
+                    </div>
+                    <div class="modal-body result-content">
+                        TOTAL CORRECT / TOTAL QUESTIONS : {{obtainedResult.totalCorrect}} /
+                        {{obtainedResult.totalQuestions}}
+                        <br />
+                        <button mat-stroked-button (click)="exitTest()"
+                            class="btn btn-success btn-placement">EXIT</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <div class="main-test-content-container">
+        <div class="question-container">
+            <mat-card class="element noselect">QUESTION {{ questionNumber+1 }}</mat-card>
+
+            <mat-card class="element text-wrap noselect">
+                {{ singleQuestion.question }}
+                <div *ngIf="singleQuestion.image">
+                    <mat-divider></mat-divider>
+                    <div class='img-fluid element-img'>{{singleQuestion.image}}</div>
+
+                </div>
+                <!-- <img alt='' class='img-fluid element-img' src='https://source.unsplash.com/category/nature/800x400'> -->
+
+            </mat-card>
+        </div>
+        <div class="options-container noselect">
+            <mat-card class="element">OPTION LIST</mat-card>
+            <perfect-scrollbar>
+                <mat-card class="element text-wrap"
+                    [ngStyle]="{'background-color':savedAnswer === 'option1' || optionSelected === 'option1'? '#2EE59D' : '' }"
+                    (click)="optionSelect('option1')">A. {{ singleQuestion.option1 }}</mat-card>
+                <mat-card class="element text-wrap"
+                    [ngStyle]="{'background-color':savedAnswer === 'option2' || optionSelected === 'option2'? '#2EE59D' : '' }"
+                    (click)="optionSelect('option2')">B. {{ singleQuestion.option2 }}</mat-card>
+                <mat-card class="element text-wrap"
+                    [ngStyle]="{'background-color':savedAnswer === 'option3' || optionSelected === 'option3'? '#2EE59D' : '' }"
+                    (click)="optionSelect('option3')">C. {{ singleQuestion.option3 }}</mat-card>
+                <mat-card class="element text-wrap"
+                    [ngStyle]="{'background-color':savedAnswer === 'option4' || optionSelected === 'option4' ? '#2EE59D' : '' }"
+                    (click)="optionSelect('option4')">D. {{ singleQuestion.option4 }}</mat-card>
+            </perfect-scrollbar>
+            <!-- <mat-card class="element" (click)="saveAndNext()">SAVE & NEXT</mat-card> -->
+
+            <div class=" student-start-btn-2">
+                <button mat-raised-button class=" button-2" (click)="saveAndNext()">SAVE & NEXT</button>
+            </div>
+
+
+        </div>
+        <div class="question-list-container">
+
+            <mat-card class="element noselect">QUESTIONS LIST</mat-card>
+            <mat-card class="element question-button-list">
+                <perfect-scrollbar>
+                    <mat-chip-list>
+
+                        <div class="column" *ngFor="let question of questionPaper;let i=index">
+                            <mat-chip [ngStyle]="{'background-color': checkQuestionColor(question) }"
+                                (click)="onQuestionNumberClick(i)"> {{ i + 1 }}</mat-chip>
+                        </div>
+
+                    </mat-chip-list>
+
+
+                </perfect-scrollbar>
+            </mat-card>
+                <div class="submit-test-btn">
+                    <div class="question-change-button">
+                        <div class=" student-start-btn-2">
+                            <button mat-raised-button class=" button-2" (click)="prevQuestion()">PREVIOUS</button>
+                            <button mat-raised-button class=" button-2" (click)="nextQuestion()">NEXT</button>
+                        </div>
+                    </div>
+                    <div class=" student-start-btn-2">
+                        <button mat-raised-button class=" button-2" (click)="submitTest()">SUBMIT TEST</button>
+                    </div>
+
+                </div>
+            
+
+        </div>
+    </div>
+    <footer>
+        <mat-toolbar class="footer-container">
+            <span class="test-name">Duration(in minutes): {{ duration/60 }}</span>
+        </mat-toolbar>
+    </footer>
+</div>

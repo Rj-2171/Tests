@@ -1,0 +1,32 @@
+// table {
+//   font-family: arial, sans-serif;
+//   border-collapse: collapse;
+//   width: 100%;
+// }
+
+// td,
+// th {
+//   border: 1px solid grey;
+//   text-align: left;
+//   padding: 8px;
+// }
+
+// .table-header {
+//   th {
+//     background-color: transparent !important;
+//   }
+// }
+
+
+// tr:nth-child(odd) {
+//   background-color: grey;
+// }
+
+.result-desc{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1em;
+}
+.mat-drawer-content{
+    color: #F8FAFA;
+}

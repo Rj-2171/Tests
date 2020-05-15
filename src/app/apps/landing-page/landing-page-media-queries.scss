@@ -1,0 +1,104 @@
+@media only screen and (max-width: 1200px){
+    .left-inner{ padding-left: 3cm; }
+    .right1{
+        margin-top: 3cm;
+        height: 70%
+    }
+    .students-heading{ font-size: x-large; }
+    .teachers-heading{ font-size: x-large; }
+    .text{ font-size: 16px; }
+    .div1{ font-size: 2.6em; }
+    .btn-primary{ 
+        width: 12em;
+        height: 3em;
+    }
+    }
+
+@media only screen and (max-width: 1023px){
+    .left-inner{ padding-left: 2cm; }
+    .right1{
+        margin-top: 9em ;
+        height: 60% ;
+        margin-left: 5em;
+    }
+    .students-heading{ font-size: large; }
+    .teachers-heading{ font-size: large; }
+    .text{ font-size: 14px; }
+    .div1{ font-size: 2em; }
+    .btn-primary{ 
+        width: 10em;
+        height: 2.5em;
+    }
+    .teach-now{
+        margin-top: 2em;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .left-inner{ padding-left: 1cm; }
+    .right1{
+        // margin-top: 0em ;
+        // height: 0% ;
+        // margin-left: 0em;
+        height: 50%;
+    }
+    .copyright{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 680px){
+
+    .right1{
+        margin: 0em ;
+        height: 0% ;
+        padding: 0em;
+        width: 0em;
+    }
+
+    .right{
+        margin: 0em ;
+        height: 0% ;
+        padding: 0em;
+        width: 0em;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 480px){
+
+    .dual-login{
+        flex-wrap: wrap;
+        
+    }
+
+
+    .right1{
+        margin: 0em ;
+        height: 0% ;
+        padding: 0em;
+        width: 0em;
+    }
+
+    .right{
+        margin: 0em ;
+        height: 0% ;
+        padding: 0em;
+        width: 0em;
+    }
+    .text {
+        width :20em;
+    }
+    .copyright{
+        font-size: 10px;
+        width: 195px;
+    }
+    .btn-primary{ 
+      
+        margin-bottom: 2em;
+        font-size: 15px;
+    }
+
+}

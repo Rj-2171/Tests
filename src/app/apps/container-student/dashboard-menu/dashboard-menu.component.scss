@@ -1,0 +1,27 @@
+.dashboard-menu-container {
+
+  .left-container {
+    padding: 2em;
+
+    position: fixed;
+    height: 100vh;
+    overflow: auto;
+    width: 18vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  }
+
+  .profile-icon {
+    height: 2em;
+    width: 2em;
+  }
+
+  .left-top-container {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 1em;
+  }
+
+}

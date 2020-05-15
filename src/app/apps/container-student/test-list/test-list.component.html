@@ -1,0 +1,61 @@
+<!-- <div class="test-list-container">
+    <app-test-list-global (startTest)="startNewTest($event)" [is-student]="true" [show-create-test]="false"
+        [test-list]="testList"></app-test-list-global>
+</div> -->
+
+
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab label="My Objective Tests">
+        <app-test-list-global (startTest)="startNewTest($event)" [is-student]="true" [show-create-test]="false"
+            [test-list]="testList">
+        </app-test-list-global>
+    </mat-tab>
+    <mat-tab label="My Subjective Tests">
+        <app-test-list-global [show-create-test]="false" [is-student]="true" [test-list]="subjectiveTestListGlobal">
+        </app-test-list-global>
+    </mat-tab>
+    <mat-tab label="Objective Test Results">
+        <!-- <app-test-list-global [is-student]="false" [show-create-test]="false" [test-list]="testListPub">
+        </app-test-list-global> -->
+
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let testResult of testResultList">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Test Title : {{testResult.title}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>Test given at : {{testResult.timeOfTest |  date:'medium'}}</p>
+                <p>Your Score
+                    <br>
+                    Correct/Total : {{ testResult.correct }}/{{ testResult.total}}
+                </p>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-tab>
+    <mat-tab label="Subjective Test Results">
+        <!-- <app-test-list-global [is-student]="false" [show-create-test]="false" [test-list]="testListPub">
+        </app-test-list-global> -->
+
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Test Title : Unit-I
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>Test given at : Apr 10, 2020, 10:01:15 PM</p>
+                <p>Your Score
+                    <br>
+                    Correct/Total : 32/60
+                </p>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-tab>
+</mat-tab-group>

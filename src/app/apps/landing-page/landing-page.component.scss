@@ -1,0 +1,195 @@
+.container1 {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  overflow: hidden;
+  background-color: #F8FAFA;
+
+}
+
+.hr {
+  border: 0.5px solid black;
+  margin-left: 7vw;
+  margin-right: 7vw;
+  margin-top: 4vh;
+
+}
+
+.div1 {
+  // margin-top: 2em;
+  // margin-left: 3em;
+  font-weight: bold;
+  font-size: 3em;
+  color:#39424E;
+}
+
+.div2 {
+  margin-left: 8em;
+  margin-top: 6em;
+}
+
+.div2a {
+  color: #738f93;
+  letter-spacing: -0.013em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 44px;
+}
+
+.div2b {
+  color: #738f93;
+  letter-spacing: -0.013em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 44px;
+}
+
+.left {
+  width: 60%;
+  height: 100%;
+}
+
+.left-inner{
+  flex-direction: column;
+  justify-content: space-around;
+  display: flex;
+  height: 100%;
+  align-items: end;
+  padding-left: 4em;
+ 
+}
+
+.right {
+  width: 40%;
+  height: 100%;
+}
+
+.right1 {
+  background-image: url("../../../assets/images/pencil.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 90%;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10em;
+}
+
+.dual-login {
+  // margin-top: 6em;
+  // margin-left: 8em;
+  display: flex;
+
+}
+
+.dual-left {
+  margin-right: 1em;
+}
+
+.students-heading {
+  font-weight: bold;
+  font-size: xx-large;
+  color: #39424E;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.teachers-heading {
+  font-weight: bold;
+  font-size: xx-large;
+  color: #39424E;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.text {
+  color: #738f93;
+  font-family: Ruluko;
+  font-size: 18px;
+}
+
+.btn-primary {
+  margin-top: 1em;
+  // width: 13em;
+  // height: 3.5em;
+  color: white;
+  background-color: #1665D8;
+  border: #ffffff;
+  // padding: 1em 4em;
+  border-radius: 2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-primary:focus{
+  outline: none;
+}
+
+.btn-secondary {
+  margin-top: 1em;
+  color: white;
+  width: 13em;
+  height: 3.5em;
+  border: 2px solid white;
+  /* padding: 1em 4em; */
+  border-radius: 2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyright {
+  color: #738f93;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  // margin-top: 11em;
+  // margin-left: 7em;
+}
+
+// .btn-danger {
+//   color: #ffffff;
+//   background-color: #1665D8;
+//   border-color: #1665D8;
+//   -webkit-box-shadow: none;
+//           box-shadow: none; 
+//   .btn-danger:hover {
+//     color: #ffffff;
+//     background-color: #1760C6;
+//     border-color: #1760C6; }
+//   }
+
+.text-color{
+  color: #576871;
+}
+
+.button1 {
+  width: 161px;
+  height: 32px;
+  margin: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #2EE59D;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.button1:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.student-start-btn1 {
+  height: 26%;
+  display: flex;
+  align-items: flex-start;
+}

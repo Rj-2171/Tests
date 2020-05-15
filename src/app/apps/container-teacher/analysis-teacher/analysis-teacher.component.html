@@ -1,0 +1,104 @@
+<div>
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="My Objective Result">
+            <mat-accordion>
+                <mat-expansion-panel *ngFor="let singleTest of testList" (opened)="getAllResultOfATest(singleTest._id)"
+                    (closed)="clearTestResults()">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Test Title : {{singleTest.testTitle}}
+                            <span class="ml-2"><i class="fa fa-upload" data-toggle="Upload result in CSV" title="Upload result in CSV"
+                            (click)="downloadCSVResult(singleTest._id)"></i>
+                        </span>
+                        </mat-panel-title>
+                        <mat-panel-description>
+
+                            <!-- Subject : {{ singleTest.subject_id.subjectName }}
+                            Class : {{ singleTest.class_id.className }} -->
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <ng-template matExpansionPanelContent>
+                        <div class="result-desc">
+                            <span>Subject : {{ singleTest.subject_id.subjectName }}</span>
+                            <span>Branch : {{ singleTest.institute_id.instituteName }}</span>
+                            <span>Year of Engineering : {{ singleTest.class_id.className }}</span>
+                        </div>
+                        <table class="table table-dark">
+                            <tr>
+                                <th>Registration No.</th>
+                                <th>Name</th>
+                                <th>Marks</th>
+                                <th>Test Submission</th>
+                            </tr>
+                            <tr *ngFor="let singleResult of testResultList">
+                                <td>{{ singleResult.userId.registrationId }}</td>
+                                <td>{{ singleResult.userId.name }}</td>
+                                <td>{{singleResult.totalCorrect}}/{{singleResult.totalQuestions}}</td>
+                                <td>{{ singleResult.testGivenAt |  date:'medium'}}</td>
+                            </tr>
+                        </table>
+                    </ng-template>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-tab>
+        <mat-tab label="My Subjective Result">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Test Title : Unit-I
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            <i class="fa fa-upload" data-toggle="Upload result in CSV" title="Upload result in CSV"></i>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <ng-template matExpansionPanelContent>
+                        <div class="result-desc">
+                            <span>Subject : Machine Learning</span>
+                            <span>Branch : COMP-A</span>
+                            <span>Year of Engineering : 1st year</span>
+                        </div>
+
+                        <table class="table table-dark">
+                            <tr>
+                                <th>Registration No.</th>
+                                <th>Name</th>
+                                <th>Uploaded Answer URL</th>
+                                <th>Marks</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr *ngFor="let singleResult of subjectiveResult">
+                                <td>{{ singleResult.regNo }}</td>
+                                <td>{{singleResult.name}}</td>
+                                <td><a target="_blank" href="{{ singleResult.answer}}">Answer Sheet</a></td>
+                                <td>
+                                    <ng-container>
+                                        {{ singleResult.marks}}
+                                    </ng-container>
+
+                                    <!-- <ng-template #editableMarks12>
+                                        <input type="text" [(ngModel)]="editableMarks" name="" id="">
+                                    </ng-template> -->
+                                </td>
+                                <td>
+                                    <ng-container>
+                                        <i class="fa fa-pencil"></i>
+                                    </ng-container>
+
+                                    <!-- <ng-template #editableRow>
+                                        <i class="fa fa-check" (click)="editMarks(singleResult.regNo)"></i>
+                                        <i class="fa fa-times" (click)="editMarks(singleResult.regNo)"></i>
+                                    </ng-template> -->
+
+                                </td>
+                            </tr>
+                        </table>
+                    </ng-template>
+                </mat-expansion-panel>
+            </mat-accordion>
+
+        </mat-tab>
+    </mat-tab-group>
+</div>

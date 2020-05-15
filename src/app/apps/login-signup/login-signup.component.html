@@ -1,0 +1,57 @@
+<div class="login-bg flex ">
+    <!-- <app-popup [message]="message" [status]="status" (close)="closePopup($event)" [type]="statusType"></app-popup> -->
+  
+    <div class="box ">
+        <!---------------------LOGIN Page----------------------->
+        <ng-container *ngIf="showSignin " >
+            <!-- <div class="left-section nav-section background-green"> -->
+                <!-- <div class="top-box-heading-4 flex">
+                    <div class="text-prepease-4">Accelerate your Career</div>
+                </div> -->
+                <!-- <div class="left-section-image">
+                
+                </div>
+            </div> -->
+            <div class="right-section content-section m-0 p-0 flex">
+                <!-- <div class = "card-background"></div> -->
+                <div class="top-box-heading flex">
+                    <span class="text-we-are">We are</span>
+                    <span class="text-prepease">PrepEase</span>
+                </div>
+                <div class="top-box-heading-1 flex">
+                    <div class="text-we-are-1">Welcome Back, Please login</div>
+                    <div class="text-prepease-1">to your account</div>
+                </div>
+
+                <div class="signin-form-container m-3">
+                    <div>
+                        <input type="email" id="username" name="username" [(ngModel)]="username" placeholder="Email"
+                            class="email-input" />
+                    </div>
+                    <div>
+                        <input type="password" id="password" name="password" [(ngModel)]="loginpassword"
+                            placeholder="Password" class="password-input" />
+                    </div>
+                </div>
+                <div class="top-box-heading-2 flex">
+
+                <button mat-raised-button type="submit" class="btn btn-danger sign-in-button"(click)="onSignin()">Sign in</button>
+                <button mat-raised-button type="submit"  class="btn btn-danger  btn-secondary"(click)="onBackToHome()">Back to Home</button>
+             </div>
+             <div class="text-we-are-3">Terms & Condition & Privacy Policy</div>
+            </div>
+          
+        </ng-container>
+        <!------------------------------------------------------>
+
+        <!------------------SIGN UP Page------------------------>
+   
+        <!------------------------------------------------------>
+    </div>
+
+    <!-- <div class =" right-side"></div> -->
+</div>
+
+
+
+
